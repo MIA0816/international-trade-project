@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play POWI.</tw-noscript></noscript></tw-story>
-<tw-storydata name="POWI" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="B9524B69-1A54-41DA-8FFE-3A43538E2E51" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ==============================
+<tw-storydata name="POWI" startnode="32" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="B9524B69-1A54-41DA-8FFE-3A43538E2E51" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ==============================
    FINAL STYLE (White + Tech Blue)
    - Body text: black
    - Choice cards: tech blue + white text
@@ -124,7 +124,23 @@ p {
 h1, h2, h3 {
   color: #0f1720 !important;
   letter-spacing: 0.2px;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="header" color="blue"></tw-tag><tw-passagedata pid="1" name="Game starts " tags="" position="1375,75" size="100,100">(set: $done_elec to false)
+}
+/* ===== Icons (match passage fadeIn 280ms) ===== */
+.scene-icon{
+  display:block;
+  width:120px;
+  max-width:40vw;
+  margin: 10px auto 18px;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: iconFadeIn 280ms ease-out forwards;
+  pointer-events: none; /* 图标不需要点 */
+}
+
+@keyframes iconFadeIn{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="header" color="blue"></tw-tag><tw-passagedata pid="1" name="Game starts " tags="" position="1350,175" size="100,100">(set: $done_elec to false)
 (set: $done_cloth to false)
 (set: $done_choco to false)
 (set: $seen_market to false)
@@ -138,7 +154,7 @@ Wie organisierst du deine Produktion?
 
 [[Produktion im Inland]]
 [[Produktion im Ausland]]
-</tw-passagedata><tw-passagedata pid="2" name="Produktion im Inland" tags="" position="1225,250" size="100,100">(set: $profit to $profit - 5)
+</tw-passagedata><tw-passagedata pid="2" name="Produktion im Inland" tags="" position="1225,300" size="100,100">(set: $profit to $profit - 5)
 (set: $quality to $quality + 8)
 
 Du produzierst im Inland.
@@ -146,7 +162,7 @@ Die Kosten sind höher, aber du kannst die Qualität besser kontrollieren.
 
 
 [[Nächster Schritt: Material auswählen]]
-</tw-passagedata><tw-passagedata pid="3" name="Produktion im Ausland" tags="" position="1525,250" size="100,100">(set: $profit to $profit + 10)
+</tw-passagedata><tw-passagedata pid="3" name="Produktion im Ausland" tags="" position="1525,350" size="100,100">(set: $profit to $profit + 10)
 (set: $quality to $quality - 5)
 
 Du produzierst im Ausland.
@@ -169,7 +185,8 @@ Regionale Materialien sind teurer, aber besser kontrollierbar.
 Globale Materialien sind günstiger, aber die Lieferkette wird komplexer.
 
 [[Zur Erklärung]]
-</tw-passagedata><tw-passagedata pid="7" name="Zur Erklärung" tags="" position="1375,675" size="100,100">
+</tw-passagedata><tw-passagedata pid="7" name="Zur Erklärung" tags="" position="1375,675" size="100,100">&lt;img class=&quot;scene-icon&quot; src=&quot;https://MIA0816.github.io/international-trade-project/earth.png&quot; alt=&quot;Earth&quot;&gt;
+
 Internationale Entscheidungen beeinflussen Gewinn, Qualität und Wachstum.
 
 Große Unternehmen produzieren heute selten nur in einem Land.
@@ -250,7 +267,9 @@ Klicke eine an:
 [[Verarbeitung]]
 [[Verpackung &amp; Verkauf]]
 
-</tw-passagedata><tw-passagedata pid="12" name="Kakaoanbau" tags="" position="1825,900" size="100,100">Kakao wächst nur in tropischem Klima.
+</tw-passagedata><tw-passagedata pid="12" name="Kakaoanbau" tags="" position="1825,900" size="100,100">&lt;img class=&quot;scene-icon&quot; src=&quot;icon_cocoa_bean.png&quot; alt=&quot;Cocoa Bean&quot;&gt;
+
+Kakao wächst nur in tropischem Klima.
 
 Ohne internationalen Handel gäbe es hier kein Kakao.
 
@@ -445,7 +464,20 @@ Danke fürs Spielen✨
 
  
 
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="32" name="Introduction" tags="" position="1175,75" size="100,100">Globale Wertschöpfungsketten verbinden Kontinente, Unternehmen und Menschen – oft unsichtbar für uns als Konsument:innen.  
+Doch hinter jedem Alltagsprodukt stehen politische und wirtschaftliche Entscheidungen.  
+
+Dieses interaktive Spiel lädt dich ein, in die Rolle eines Entscheidungsträgers einzutauchen.  
+Du steuerst Produktionsorte, Lieferketten und Handelsbeziehungen – und erlebst, wie sich deine Entscheidungen auf Märkte und Gesellschaft auswirken.  
+
+Internationale Zusammenarbeit ist kein abstraktes Konzept, sondern ein sensibles Gleichgewicht.  
+
+— Bist du bereit, Verantwortung zu übernehmen?
+
+&lt;br&gt;&lt;br&gt;
+
+
+[[Spiel starten-&gt;Game starts ]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
